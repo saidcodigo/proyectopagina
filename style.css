@@ -205,3 +205,38 @@ footer {
         gap: 5px;
     }
 }
+/* DISEÑO DEL BUSCADOR */
+.buscador {
+    background: #f4f6f9;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 30px auto;
+}
+
+.buscador h2 {
+    color: #173b69;
+    margin-bottom: 20px;
+}
+
+.buscador input {
+    width: 70%;
+    max-width: 450px;
+    padding: 13px;
+    border: 2px solid #173b69;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.buscador button {
+    padding: 13px 25px;
+    background: #173b69;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.buscador button:hover {
+    background: #24599a;
+}
