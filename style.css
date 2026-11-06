@@ -240,3 +240,58 @@ footer {
 .buscador button:hover {
     background: #24599a;
 }
+/* REDES SOCIALES */
+
+.redes-sociales {
+    text-align: center;
+    padding: 50px 20px;
+    background: #173b69;
+    color: white;
+    margin-top: 30px;
+}
+
+.redes-sociales h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.redes-sociales p {
+    margin-bottom: 25px;
+}
+
+.redes-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.red {
+    text-decoration: none;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.instagram {
+    background: #d62976;
+}
+
+.facebook {
+    background: #1877f2;
+}
+
+.tiktok {
+    background: #111111;
+}
+
+.youtube {
+    background: #ff0000;
+}
+
+.red:hover {
+    transform: translateY(-5px);
+    opacity: 0.85;
+}
