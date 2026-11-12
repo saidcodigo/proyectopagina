@@ -6,7 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Electoral - Proyecto educativo</title>
     <link rel="stylesheet" href="style.css">
+    
+<link rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
 </head>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    const mapa = L.map('mapaInteractivo').setView(
+        [19.596, -99.288], 12
+    );
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap'
+    }).addTo(mapa);
+
+    // Atizapán de Zaragoza
+    L.marker([19.5562, -99.2675])
+        .addTo(mapa)
+        .bindPopup('<b>Atizapán de Zaragoza</b><br>Estado de México');
+
+    // Nicolás Romero
+    L.marker([19.63658, -99.30682])
+        .addTo(mapa)
+        .bindPopup('<b>Nicolás Romero</b><br>Estado de México');
+</script>
+
 <body>
 
     <header>
@@ -15,14 +43,54 @@
             <span>Información ciudadana</span>
         </div>
 
-        <div class="header-main">
-            <div class="logo">
-                <div class="logo-symbol">PE</div>
-                <div>
-                    <h1>Portal Electoral</h1>
-                    <p>Democracia y participación</p>
-                </div>
-            </div>
+        
+<div class="logo-icono">
+    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+
+        <defs>
+            <linearGradient id="moradoLogo" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#A855F7"/>
+                <stop offset="100%" stop-color="#3B0764"/>
+            </linearGradient>
+        </defs>
+
+        <!-- Círculo principal -->
+        <circle cx="60" cy="60" r="57"
+                fill="url(#moradoLogo)"/>
+
+        <!-- Borde blanco -->
+        <circle cx="60" cy="60" r="51"
+                fill="none" stroke="white" stroke-width="2.5"/>
+
+        <!-- Papeleta -->
+        <path d="M42 24 L75 24 L75 48 L42 48 Z"
+              fill="white"/>
+
+        <!-- Palomita -->
+        <path d="M48 35 L55 42 L68 29"
+              fill="none" stroke="#7E22CE"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+
+        <!-- Urna -->
+        <path d="M35 49 L85 49 L92 57 L28 57 Z"
+              fill="white"/>
+
+        <rect x="34" y="58" width="52" height="8"
+              rx="2" fill="white"/>
+
+        <!-- Letras PE -->
+        <text x="60" y="98"
+              font-size="36"
+              font-weight="bold"
+              font-family="Arial"
+              text-anchor="middle"
+              fill="white">PE</text>
+
+    </svg>
+</div>
+
 
             <nav>
                 <a href="#inicio">Inicio</a>
@@ -87,6 +155,202 @@
             </div>
         </section>
 
+<!-- CALENDARIO ELECTORAL -->
+<section class="calendario-electoral" id="calendario">
+
+    <div class="calendario-titulo">
+        <span>FECHAS IMPORTANTES</span>
+        <h2>Calendario Electoral 2026-2027</h2>
+        <p>
+            Conoce las fechas y actividades más importantes
+            del proceso electoral en México.
+        </p>
+    </div>
+
+    <div class="calendario-eventos">
+
+        <article class="evento">
+            <div class="evento-fecha">
+                <strong>10</strong>
+                <span>SEP 2026</span>
+            </div>
+            <div class="evento-info">
+                <h3>Inicio del proceso electoral</h3>
+                <p>Comienza el Proceso Electoral Federal 2026-2027.</p>
+            </div>
+        </article>
+
+        <article class="evento">
+            <div class="evento-fecha">
+                <strong>30</strong>
+                <span>SEP 2026</span>
+            </div>
+            <div class="evento-info">
+                <h3>Consejos locales</h3>
+                <p>Instalación de los Consejos Locales del INE.</p>
+            </div>
+        </article>
+
+        <article class="evento">
+            <div class="evento-fecha">
+                <strong>30</strong>
+                <span>NOV 2026</span>
+            </div>
+            <div class="evento-info">
+                <h3>Consejos distritales</h3>
+                <p>Instalación de los Consejos Distritales.</p>
+            </div>
+        </article>
+
+        <article class="evento">
+            <div class="evento-fecha">
+                <strong>22</strong>
+                <span>MAR 2027</span>
+            </div>
+            <div class="evento-info">
+                <h3>Registro de candidaturas</h3>
+                <p>Periodo del 22 de marzo al 3 de abril.</p>
+            </div>
+        </article>
+
+        <article class="evento">
+            <div class="evento-fecha">
+                <strong>31</strong>
+                <span>MAY 2027</span>
+            </div>
+            <div class="evento-info">
+                <h3>Entrega de materiales</h3>
+                <p>Del 31 de mayo al 4 de junio.</p>
+            </div>
+        </article>
+
+        <article class="evento evento-principal">
+            <div class="evento-fecha">
+                <strong>06</strong>
+                <span>JUN 2027</span>
+            </div>
+            <div class="evento-info">
+                <h3>¡Jornada Electoral!</h3>
+                <p>Fecha de las elecciones federales y locales concurrentes.</p>
+            </div>
+        </article>
+
+        <article class="evento">
+            <div class="evento-fecha">
+                <strong>09</strong>
+                <span>JUN 2027</span>
+            </div>
+            <div class="evento-info">
+                <h3>Cómputos distritales</h3>
+                <p>Del 9 al 11 de junio.</p>
+            </div>
+        </article>
+
+        <article class="evento">
+            <div class="evento-fecha">
+                <strong>13</strong>
+                <span>JUN 2027</span>
+            </div>
+            <div class="evento-info">
+                <h3>Cómputo plurinominal</h3>
+                <p>Cómputo de Circunscripción Plurinominal.</p>
+            </div>
+        </article>
+
+    </div>
+
+    <p class="calendario-nota">
+        Información educativa basada en el calendario oficial del INE.
+        Consulta las actualizaciones en el sitio oficial.
+    </p>
+
+    <a class="calendario-enlace"
+       href="https://ine.mx/elecciones-2027/"
+       target="_blank"
+       rel="noopener noreferrer">
+       Consultar calendario oficial del INE →
+    </a>
+
+</section>
+
+
+<div class="video-contenedor">
+    <iframe
+        id="videoElectoral"
+        src="https://www.youtube.com/embed/o3V-Ol9eYoI"
+        title="Video del Portal Electoral"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+    </iframe>
+</div>
+
+<!-- INFORMACIÓN DESPUÉS DEL VIDEO -->
+<section class="info-electoral">
+
+    <div class="info-encabezado">
+        <span>PARTICIPACIÓN CIUDADANA</span>
+        <h2>Conoce más sobre tu participación electoral</h2>
+        <p>
+            La democracia se fortalece cuando las personas conocen
+            sus derechos, participan de manera informada y toman
+            decisiones libremente.
+        </p>
+    </div>
+
+    <div class="info-texto">
+        <h3>¿Por qué es importante votar?</h3>
+        <p>
+            El voto es una de las principales formas de participación
+            ciudadana. A través de él, las personas pueden elegir a
+            quienes las representarán y expresar sus preferencias
+            sobre el rumbo de su comunidad y del país.
+        </p>
+
+        <h3>¿Qué debes hacer antes de una jornada electoral?</h3>
+        <p>
+            Es importante revisar que tu credencial para votar esté
+            vigente, consultar la ubicación de tu casilla y conocer
+            las opciones disponibles. También es recomendable
+            informarte mediante fuentes confiables.
+        </p>
+
+        <h3>¿Qué sucede el día de las elecciones?</h3>
+        <p>
+            Durante la jornada electoral, las personas acuden a su
+            casilla correspondiente, presentan su identificación
+            electoral, reciben las boletas y emiten su voto de manera
+            libre y secreta.
+        </p>
+
+        <h3>La importancia de informarse</h3>
+        <p>
+            Participar también significa conocer las propuestas,
+            comparar información, identificar noticias falsas y
+            respetar las distintas opiniones. Una ciudadanía informada
+            contribuye a una sociedad más democrática.
+        </p>
+    </div>
+
+    <div class="info-destacada">
+        <h3>¡Tu participación cuenta!</h3>
+        <p>
+            La democracia no se construye solamente el día de las
+            elecciones. También se fortalece cuando respetamos los
+            derechos de los demás, dialogamos y participamos
+            responsablemente en nuestra comunidad.
+        </p>
+    </div>
+
+    <p class="info-aviso">
+        Contenido educativo. Para consultar procedimientos,
+        requisitos y fechas vigentes, revisa los canales oficiales
+        del Instituto Nacional Electoral.
+    </p>
+
+
+</section>
+
         <section class="participation" id="participacion">
             <h2>La democracia la construimos todos</h2>
             <p>
@@ -130,12 +394,136 @@
 
     </div>
 </section>
-    <!-- BUSCADOR -->
-<section class="buscador">
-    <h2>¿Qué información buscas?</h2>
-    <input type="text" placeholder="Buscar información...">
-    <button>Buscar</button>
+
+
+<!-- MAPA DE ZONA ELECTORAL -->
+<section class="mapa-electoral" id="mapa">
+    <div class="mapa-encabezado">
+        <span>ESTADO DE MÉXICO</span>
+        <h2>Explora tu zona</h2>
+        <p>
+            Consulta la ubicación de Atizapán de Zaragoza
+            y Nicolás Romero en el mapa.
+        </p>
+    </div>
+
+    <div id="mapaInteractivo"></div>
+
+    <div class="mapa-municipios">
+        <div class="municipio">
+            <h3>Atizapán de Zaragoza</h3>
+            <p>Municipio del Estado de México.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Atizapan+de+Zaragoza+Estado+de+Mexico"
+               target="_blank" rel="noopener noreferrer">
+                Ver ubicación →
+            </a>
+        </div>
+
+        <div class="municipio">
+            <h3>Nicolás Romero</h3>
+            <p>Municipio del Estado de México.</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Nicolas+Romero+Estado+de+Mexico"
+               target="_blank" rel="noopener noreferrer">
+                Ver ubicación →
+            </a>
+        </div>
+    </div>
+
+    <p class="mapa-aviso">
+        Las ubicaciones mostradas son referencias municipales,
+        no representan casillas electorales.
+    </p>
 </section>
+
+
+<!-- CENTRO DE ATENCION CIUDADANA -->
+<section class="atencion" id="atencion">
+
+    <h2>Centro de Atención Ciudadana</h2>
+
+    <p class="atencion-intro">
+        ¿Tienes alguna duda? Estamos aquí para ayudarte.
+        Comunícate con nosotros o utiliza nuestro chat de ayuda.
+    </p>
+
+    <div class="atencion-contenedor">
+
+        <!-- CORREO ELECTRONICO -->
+        <div class="atencion-card">
+            <div class="atencion-icono">✉</div>
+
+            <h3>Atención por correo</h3>
+
+            <p>
+                Envíanos tus preguntas, comentarios
+                o solicitudes de información.
+            </p>
+
+            <a class="boton-atencion"
+               href="mailto:TU_CORREO@ejemplo.com?subject=Consulta%20ciudadana">
+                Enviar un correo
+            </a>
+        </div>
+
+        <!-- CHAT -->
+        <div class="atencion-card">
+            <div class="atencion-icono">💬</div>
+
+            <h3>Chat de ayuda</h3>
+
+            <p>
+                Consulta información y encuentra
+                respuestas a tus preguntas.
+            </p>
+
+            <button class="boton-atencion"
+                    onclick="abrirChat()">
+                Iniciar conversación
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!-- VENTANA DEL CHAT -->
+<div class="chat-ventana" id="chatVentana">
+
+    <div class="chat-encabezado">
+        <div>
+            <strong>Asistente ciudadano</strong>
+            <small>Ayuda informativa automática</small>
+        </div>
+
+        <button onclick="cerrarChat()" class="cerrar-chat">
+            ✕
+        </button>
+    </div>
+
+    <div class="chat-mensajes" id="chatMensajes">
+        <div class="mensaje bot">
+            ¡Hola! Bienvenido al Portal Electoral.
+            ¿En qué podemos ayudarte?
+        </div>
+    </div>
+
+    <form class="chat-escritura" onsubmit="enviarMensaje(event)">
+        <input
+            type="text"
+            id="mensajeUsuario"
+            placeholder="Escribe tu pregunta..."
+            required
+        >
+
+        <button type="submit">Enviar</button>
+    </form>
+
+</div>
+
+<!-- BOTON FLOTANTE -->
+<button class="chat-flotante" onclick="abrirChat()">
+    💬
+</button>
+
 
 </body>
 </html>
