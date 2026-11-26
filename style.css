@@ -1405,3 +1405,144 @@ textarea:focus {
     height: 100%;
     display: block;
 }
+
+/* VENTANA DEL CHAT */
+
+.chat-ventana {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+    width: 340px;
+    height: 450px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+    z-index: 9999;
+}
+
+/* ENCABEZADO */
+
+.chat-encabezado {
+    background: #7920c9;
+    color: white;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cerrar-chat {
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* MENSAJES */
+
+.chat-mensajes {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mensaje {
+    padding: 11px;
+    border-radius: 12px;
+    max-width: 85%;
+    overflow-wrap: anywhere;
+}
+
+.bot {
+    background: #f0e4ff;
+    color: #35105f;
+    align-self: flex-start;
+}
+
+.usuario {
+    background: #7920c9;
+    color: white;
+    align-self: flex-end;
+}
+
+/* ESCRITURA */
+
+.chat-escritura {
+    display: flex;
+    padding: 12px;
+    gap: 7px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-escritura input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.chat-escritura button {
+    background: #7920c9;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* BOTON FLOTANTE */
+
+.chat-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #7920c9;
+    color: white;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+@media (max-width: 450px) {
+    .chat-ventana {
+        width: calc(100% - 24px);
+        right: 12px;
+        bottom: 85px;
+        height: 420px;
+    }
+}
+.chat-ventana {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+    width: 340px;
+    height: 450px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0,0,0,.25);
+    z-index: 9999;
+}
+
+.chat-mensajes {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+}
